@@ -30,7 +30,8 @@ Diffusion models provide a principled framework to address this problem.
 - Explored RePaint-style sampling with pixel reinjection
 - Identified limitations of unconditional diffusion under structured loss
 
-📄 Report: `docs/first.pdf`
+📄 Report: [first.pdf](docs/first.pdf)
+
 
 ---
 
@@ -41,7 +42,8 @@ Diffusion models provide a principled framework to address this problem.
 - Visualization of masked → reconstructed → ground truth
 - Verified learning via controlled overfitting experiments
 
-📄 Report: `docs/second.pdf`
+📄 Report: [second.pdf](docs/second.pdf)
+
 
 ---
 
@@ -53,7 +55,8 @@ Diffusion models provide a principled framework to address this problem.
 - Generated control images from pseudo-full interpolations to avoid stripe leakage
 - Studied system constraints (batch size, memory limits)
 
-📄 Report: `docs/third.pdf`
+📄 Report: [third.pdf](docs/third.pdf)
+
 
 ---
 
@@ -70,7 +73,8 @@ Key insight:
 > Conditioning improves structure, DPS enforces measurement consistency;
 > combining both yields the most robust reconstructions.
 
-📄 Report: `docs/forth.pdf`
+📄 Report: [first.pdf](docs/first.pdf)
+
 
 ---
 
@@ -83,7 +87,8 @@ Key insight:
 - SD 1.5 UNet / VAE / text encoder frozen
 - Quantitative evaluation (SSIM, LPIPS)
 
-📄 Report: `docs/fifth.pdf`
+📄 Report: [first.pdf](docs/first.pdf)
+
 
 ---
 

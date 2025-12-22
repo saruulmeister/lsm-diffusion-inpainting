@@ -1,10 +1,9 @@
 # Diffusion-Based Inpainting for Structured Missing Data in Light-Sheet Microscopy
 
-** Saruultugs Batbayar **
+**Saruultugs Batbayar**
 
 This repository serves as a research point for my work on image restoration through diffusion on structured missing data samples in the context of Light Sheet Microscopy.
 It tracks a progressive line of inquiry, which moved from baseline diffusion inpainting to personal ControlNet training with extreme undersampling.
----
 
 
 ## Research Motivation

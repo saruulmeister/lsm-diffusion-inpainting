@@ -1,80 +1,54 @@
 # Diffusion-Based Inpainting for Structured Missing Data in Light-Sheet Microscopy
 
-Saruultugs
+B.Sc. EN
 
-This repository is a **research hub** for my work on diffusion-based image restoration, specifically for **structured missing data** present in **Light Sheet Microscopy (LSM)**.
+This repository serves as a research point for my work on image restoration through diffusion on structured missing data samples in the context of Light Sheet Microscopy.
 
-It records an increasingly complex research process from basic diffusion-based inpainting to personal training of ControlNet on extreme undersampling.
+It tracks a progressive line of inquiry, which moved from baseline diffusion inpainting to personal ControlNet training with extreme undersampling.
+Research Motivation
+Fast imaging with reduced phototoxic effects in living specimens is possible with Light Sheet Microscopy, while it creates strong stripe artifacts for missing rows because of data-acquisition issues.
+Reconstructing images or volumes in these conditions requires the following from the models:
+1. Respect known measurements
 
----
-# Research Motivation
-Researchers
-Light Sheet Microscopy allows fast and low phototoxic imaging of living samples, while imposing **severe stripe-like row missing artifacts**.
-To reconstruct complete images/volumes from such conditions, models should ideally possess the following properties:
-* RESPECT KNOWN MEASUREMENT
+2.  Preserve Global Structure
 
-- Global structure retained
+3. Stable with little data in sight
+A diffusion model offers a sound approach to solve this issue.
 
-→ Stable with very limited data being visible
+Projects (Chronological
+1. Diffusion Inpainting on CelebA - First Experiences
 
-Diffusion Models offer a rigorous framework to treat this issue.
+Task: Analyze the performance of existing diffusion-based inpainting models on the masked data.
 
----
+- Tested Patch DDPM inpainting on faces of size 64×64 with a mask
+- Evaluated RePaint sampling method with pixel reinjection
+– Examined the limitations of unconditional diffusion in the presence of structured or large missing regions
 
-## Projects (Chronological)
-### 1. Diffusion Inpainting on CelebA - First Exploration
+2. Diffusion Inpainting on CelebA — Extended Experiments
 
-**Goal:** Evaluation of existing diffusion-based inpainting algorithms on the masked data.
+Aim: Validate training process behavior, reconstruction quality.
+- Developed a custom PatchMaskDataset
+- Trained a UNet-based DDPM on masked inputs and learned time embeddings.
 
-- Tested PatchDDPM inpainting on faces from the CelebA dataset (patch-mask
+- Masked image → reconstructed image → ground truth results
 
-- Tested RePaint-style sampling with pixel reinjection
+- Demonstrated correct learning by controlled overfitting tests
+3. Utilizing Diffusion Models in LSM Image Restoration
+Purpose: To move from the current method that uses patch masking to a new technique based on stripe masking that corresponds to the
+- Applied SparseRowMasker with controllable missing rates (50%-85%)
 
-- Investigated limitations in unconditional diffusion models for structured missing regions and large missing areas
-# Report: `docs/
----
+- Used Stable Diffusion Inpainting with ControlNet (Canny/soft-edge edges)
 
-### 2. Diffusion Inpainting on CelebA — Extended Experiments
+* Produced control images using pseudo-full interpolation to prevent stripe leakage
 
-**Goal:** Training behavior and quality validation.
-
-- Introduced a custom dataset: PatchMaskDataset
-
-- Trained a UNet-based DDPM on masked inputs with time embeddings
-- Masked input visuals → reconstructed visuals → ground truths
-- Demonstrated the correctness of learned solutions by controlled overfitting experimentation
-
-???? Report File:
-
----
-
-### 3. Diffusion Models Usage in LSM Image Restoration
-
-*   **Goal:** Move on from the masking by patches stage to the masking by stripes, which are in consideration of
-- Added SparseRowMasker with adjustable ratios (50%–85%) for
-- Used Stable Diffusion Inpainting with Control Net (Canny/soft edge)
-- Created control images through pseudo-full interpolation to prevent stripe leakage
-
-- Identified system constraints regarding batch sizes and memory.
-
-???? Report: `
-
--
-
-### 4. Reconstruction by Diffusion using DPS
-
-*Goal:*
-     Compare the conditioning and inverse problem formulations
+- Informed about system constraints (batch size, memory constraints)
+4. Reconstruction Using DPS by Diffusion
+* Goal: Comparison between formulations of conditioning and inverse problems.
 Models explored:
+
 - RePaint
+
 - CoPaint / Tiramisu
 
-- DPS (Diffusion Posterior Sampling)
-
-- ControlNet + DPS (proposed)
-
-Key Insight:
-
-Conditioning refines structure, while enforcement of DPS maintains the measurement consistency; together, these two produce the best reconstruction results.
-
-???? Report: ` <div ### 5. Stripe-Mask Inpainting via ControlNet Training **Goal:** Develop a learned ControlNet that will perform structured stripe masks. - 43,525 COCO train images * Dynamic online stripe mask generation. - ControlNet Conditioning, - Stable Diffusion 1.5 UNet / VAE / text encoder frozen - Quantitative Comparison by SSIM & LPIPS ???? Report: ` --- # Summary This work shows a **coherent research progression**: > Baseline Diffusion Process → Patch Inpainting → Structured Stripe Masking → Inverse Diffusion (DPS) → Custom ControlNet Training This repository combines reports and results that show **theoretical understanding** and **system-level implementation** in reconstructing using diffusion on extreme information loss.
+- DPS (Diffusion Posterior Sampling) - ControlNet + DPS Bromdum Key insight:
+The Conditioning helps with structure, while the enforcement of measurements by DPS ensures consistency in the measurements, and a combination of both ensures the most reliable recon 5. Stripe-Mask Inpainting with Trained * Task: Train a custom ControlNet for structured stripe-mask inpainting. - Trained on 43,525 COCO Images - Dynamic online stripe mask generation - 4-channel ControlNet Conditioning - Stable Diffusion 1.5 UNet/VAE/text encoder frozen - SSIM and LPIPS-Based Quantitative Assessment Introduction This work offers a consistent approach to doing research and presents a well- > Baseline Diffusion + Patch inpainting + Structured Stripe Masking + Inverse diffusion (DPS) + ControlNet training_Customized This repository integrates the various reports and results that support theoretical knowledge and system-level implementation of diffusion-based reconstruction in adverse conditions of information loss.

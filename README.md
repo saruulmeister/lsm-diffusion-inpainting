@@ -50,11 +50,13 @@ A diffusion model offers a sound approach to solve this issue.
 ***Goal:*** Comparison between formulations of conditioning and inverse problems.
 Models explored:
 
+Models explored:
 - RePaint
-
 - CoPaint / Tiramisu
+- DPS (Diffusion Posterior Sampling)
+- ControlNet + Stable Diffusion (proposed)
 
-- DPS (Diffusion Posterior Sampling) - ControlNet + DPS Bromdum Key insight: The Conditioning helps with structure, while the enforcement of measurements by DPS ensures consistency in the measurements, and a combination of both ensures the most reliable reconstuction.
+Important finding of the experiment: ControlNet-conditioned Stable Diffusion architecture for image reconstruction masked with stripes, wherein the ControlNet incorporates the acquisition patterns and the frozen diffusion backbone helps in generating better priors.
 
 ### 5. Stripe-Mask Inpainting with Trained ControlNet
 **Goal:** Train a custom ControlNet for structured stripe-mask inpainting.

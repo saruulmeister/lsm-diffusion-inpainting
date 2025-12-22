@@ -54,5 +54,13 @@ Models explored:
 
 - CoPaint / Tiramisu
 
-- DPS (Diffusion Posterior Sampling) - ControlNet + DPS Bromdum Key insight:
-The Conditioning helps with structure, while the enforcement of measurements by DPS ensures consistency in the measurements, and a combination of both ensures the most reliable recon ### 5. Stripe-Mask Inpainting with Trained * Task: Train a custom ControlNet for structured stripe-mask inpainting. - Trained on 43,525 COCO Images - Dynamic online stripe mask generation - 4-channel ControlNet Conditioning - Stable Diffusion 1.5 UNet/VAE/text encoder frozen - SSIM and LPIPS-Based Quantitative Assessment Introduction This work offers a consistent approach to doing research and presents a well- > Baseline Diffusion + Patch inpainting + Structured Stripe Masking + Inverse diffusion (DPS) + ControlNet training_Customized This repository integrates the various reports and results that support theoretical knowledge and system-level implementation of diffusion-based reconstruction in adverse conditions of information loss.
+- DPS (Diffusion Posterior Sampling) - ControlNet + DPS Bromdum Key insight: The Conditioning helps with structure, while the enforcement of measurements by DPS ensures consistency in the measurements, and a combination of both ensures the most reliable reconstuction.
+
+### 5. Stripe-Mask Inpainting with Trained ControlNet
+**Goal:** Train a custom ControlNet for structured stripe-mask inpainting.
+
+- Trained on 43,525 COCO images
+- Dynamic online stripe-mask generation
+- 4-channel ControlNet conditioning
+- Stable Diffusion 1.5 UNet / VAE / text encoder frozen
+- Quantitative evaluation using SSIM and LPIPS

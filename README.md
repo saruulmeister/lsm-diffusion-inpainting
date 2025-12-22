@@ -81,3 +81,10 @@ Important finding of the experiment: ControlNet-conditioned Stable Diffusion arc
 
 📄 Report: [fifth.pdf](docs/fifth.pdf)
 
+
+## Previous Experiments (Archived)
+
+Previous baseline and exploratory experiments are archived on Google Drive. Click the links below to view the implementations and results.
+[Google Drive](https://drive.google.com/drive/folders/1EFK3x28FsNTKdynfMLQ4rc7uQ1aKfEDh?usp=share_link)
+
+

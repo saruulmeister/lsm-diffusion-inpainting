@@ -88,3 +88,19 @@ Previous baseline and exploratory experiments are archived on Google Drive. Clic
 [Google Drive](https://drive.google.com/drive/folders/1EFK3x28FsNTKdynfMLQ4rc7uQ1aKfEDh?usp=share_link)
 
 
+## Training and Sampling Code
+
+The proposed ControlNet + Stable Diffusion method is implemented in Jupyter notebooks.
+
+- **Training notebook:** [`notebooks/training.ipynb`](notebooks/training.ipynb)  
+  Trains a stripe-mask ControlNet while keeping the Stable Diffusion backbone frozen.
+
+- **Sampling notebook:** [`notebooks/sampling.ipynb`](notebooks/sampling.ipynb)  
+  Performs stripe-mask inpainting using trained ControlNet checkpoints.
+
+### Trained Models
+Model checkpoints are stored on Google Drive due to size constraints.
+
+- Stripe ControlNet checkpoints:  
+  [Model checkpoints:](https://drive.google.com/drive/folders/1BMlZGVFWGvt_pHVd-ajLDHkCNifE-L69?usp=share_link)
+
